@@ -1,0 +1,10 @@
+# mpv state and cache directories
+watch_later/
+cache/
+
+# Log files (like your memo-history.log)
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
