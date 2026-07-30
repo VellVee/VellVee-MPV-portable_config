@@ -1,6 +1,7 @@
 # mpv state and cache directories
 watch_later/
 cache/
+persistent_config.json
 
 # Log files (like your memo-history.log)
 *.log
@@ -8,4 +9,3 @@ cache/
 # OS generated files
 .DS_Store
 Thumbs.db
-persistent_config.json
