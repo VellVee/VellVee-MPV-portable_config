@@ -39,8 +39,20 @@ local function apply_autofit()
 
     local mon = find_monitor(display_fps)
     if not mon then
-        msg.warn(string.format("no monitor match for fps=%.1f", display_fps))
-        return
+        -- Fallback for single-monitor systems (e.g. laptop):
+        -- On single-monitor Wayland, display-width/height are accurate.
+        local dw = mp.get_property_number("display-width")
+        local dh = mp.get_property_number("display-height")
+        if dw and dh and dw > 0 and dh > 0 then
+            mon = {
+                width = dw / hidpi,
+                height = dh / hidpi,
+                name = string.format("Display (%.0fHz)", display_fps or 60),
+            }
+        else
+            msg.warn(string.format("no monitor match and no display dimensions for fps=%.1f", display_fps or 0))
+            return
+        end
     end
 
     -- 70% of monitor logical dimensions
