@@ -1,6 +1,6 @@
 # MPV Config
 
-A quality-focused, portable [mpv](https://mpv.io/) configuration tuned for high-end AMD hardware with a 4K HDR display. Some profiles require a high-end GPU to run smoothly. Additionally features a battery-optimized profile for laptops with Intel Iris Xe graphics.
+A quality-focused [mpv](https://mpv.io/) configuration tuned for high-end AMD hardware with a 4K HDR display. Most profiles require a high-end GPU to run smoothly. Additionally features a battery-optimized profile for laptops with Intel Iris Xe graphics.
 
 Includes automated profile switching, a mixed-DPI Wayland multi-monitor window management script, GLSL shaders, and UI enhancements via [uosc](https://github.com/tomasklaen/uosc).
 
@@ -22,7 +22,7 @@ Includes automated profile switching, a mixed-DPI Wayland multi-monitor window m
   - **`[SDR-Upscale]`**: Enhances sub-4K SDR live-action content using `SSimSuperRes.glsl` and `CfL_Prediction.glsl`.
   - **`[4KSDR]` & `[4KHDR]`**: High-accuracy settings for 4K OLED panels.
   - **`[Anime-GENERAL]`**: Computationally heavy anime upscaling utilizing `ArtCNN_C4F32.glsl` alongside `CfL_Prediction.glsl`.
-  - **`[AnimeLanguageSwitch]`**: Automatically prioritizes Japanese audio tracks and preserves stylized subtitles.
+  - **`[AnimeLanguageSwitch]`**: Automatically prioritizes Japanese/Korean/Chinese audio.
   - **`[Linux]` & `[Windows]`**: OS-specific hardware settings.
 ---
 
