@@ -1,11 +1,11 @@
 # MPV Config
 
-A quality-focused [mpv](https://mpv.io/) configuration tuned for high-end AMD hardware with a 4K HDR display. Most profiles require a high-end GPU to run smoothly. Additionally features a battery-optimized profile for laptops with Intel Iris Xe graphics.
+A personal quality-focused [mpv](https://mpv.io/) configuration tuned for high-end AMD hardware with a 4K HDR display. Most profiles require a high-end GPU to run smoothly. Additionally features a battery-optimized profile for laptops with Intel Iris Xe graphics.
 
 Includes automated profile switching, a mixed-DPI Wayland multi-monitor window management script, GLSL shaders, and UI enhancements via [uosc](https://github.com/tomasklaen/uosc).
 
 > [!NOTE]
-> Much of the custom Lua scripting, profile automation, and tuning in this repository was created with AI assistance. I did my best to ensure the code works well, but please treat it as-is with no guarantees provided.
+> Much of the custom Lua scripting, profile automation, and tuning in this repository was created with AI assistance. I did my best to ensure scripts work well, but treat it 'as-is' with no guarantees provided.
 
 ---
 
