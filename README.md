@@ -5,7 +5,7 @@ A personal quality-focused [mpv](https://mpv.io/) configuration tuned for high-e
 Includes automated profile switching, a mixed-DPI Wayland multi-monitor window management script, GLSL shaders, and UI enhancements via [uosc](https://github.com/tomasklaen/uosc).
 
 > [!NOTE]
-> Much of the custom Lua scripting, profile automation, and tuning in this repository was created with AI assistance. I did my best to ensure scripts work well, but treat it 'as-is' with no guarantees provided.
+> Much of the custom Lua scripting and profile automation in this repository was created with AI assistance. I did my best to ensure scripts work well, but treat it 'as-is' with no guarantees provided.
 
 ---
 
@@ -66,6 +66,7 @@ Scripts are provided in this repository but updated only occasionally. Sources a
 | **visualizer** | Audio visualization overlay for music playback | MIT | [mfcc64/mpv-scripts](https://github.com/mfcc64/mpv-scripts/blob/master/visualizer.lua) |
 | **autofit-wayland** | Multi-monitor & mixed-DPI Wayland window scaler | GPL-3.0 | *Custom script* (`scripts/autofit-wayland.lua`) |
 | **toggle-gpu-effects** | Toggles active GLSL shaders & dithering at runtime | GPL-3.0 | *Custom script* (`scripts/toggle-gpu-effects.lua`) |
+| **thumbfast** | Thumbnail previews on timeline hover | MPL-2.0 | [po5/thumbfast](https://github.com/po5/thumbfast) |
 
 ---
 
