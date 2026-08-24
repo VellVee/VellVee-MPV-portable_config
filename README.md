@@ -20,7 +20,7 @@ Includes automated profile switching, a mixed-DPI Wayland multi-monitor window m
   - **Auto Hardware Detection**: Detects device type (desktop PC vs. laptop) based on battery presence.
   - **`[Laptop]`**: Battery-conscious profile for laptops with Intel Iris Xe graphics.
   - **`[SDR-Upscale]`**: Enhances sub-4K SDR live-action content using `SSimSuperRes.glsl` and `CfL_Prediction.glsl`.
-  - **`[4KSDR]` & `[4KHDR]`**: High-accuracy settings for 4K OLED panels.
+  - **`[4KHDR]`**: High-accuracy settings for 4K OLED panels.
   - **`[Anime-GENERAL]`**: Computationally heavy anime upscaling utilizing `ArtCNN_C4F32.glsl` alongside `CfL_Prediction.glsl`.
   - **`[AnimeLanguageSwitch]`**: Automatically prioritizes Japanese/Korean/Chinese audio.
   - **`[Linux]` & `[Windows]`**: OS-specific hardware settings.
@@ -37,6 +37,8 @@ Includes automated profile switching, a mixed-DPI Wayland multi-monitor window m
 | `h` | Open Memo playback history menu |
 | `b` | Toggle debanding |
 | `u` | Toggle custom subtitle style override |
+| `a` | Toggle dynamic range compression & loudness normalization (`acompressor` + `loudnorm`) |
+| `Shift + r` | Reload/reopen current file or stream at current timestamp (`reload.lua`) |
 
 ---
 
@@ -63,6 +65,7 @@ Scripts are provided in this repository but updated only occasionally. Sources a
 | **auto-save-state** | Periodically saves watch progress | GPL-3.0 | [Argon-/mpv-config](https://github.com/Argon-/mpv-config/blob/master/scripts/auto-save-state.lua) |
 | **fuzzydir** | Fuzzy directory matching for external audio/subtitles | MIT | [sibwaf/mpv-scripts](https://github.com/sibwaf/mpv-scripts/blob/master/fuzzydir.lua) |
 | **persist-properties** | Persists selected properties across restarts | MIT | [d87/mpv-persist-properties](https://github.com/d87/mpv-persist-properties) |
+| **reload** | Reloads current media/stream preserving timestamp | MIT | [sibwaf/mpv-scripts](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) |
 | **visualizer** | Audio visualization overlay for music playback | MIT | [mfcc64/mpv-scripts](https://github.com/mfcc64/mpv-scripts/blob/master/visualizer.lua) |
 | **autofit-wayland** | Multi-monitor & mixed-DPI Wayland window scaler | GPL-3.0 | *Custom script* (`scripts/autofit-wayland.lua`) |
 | **toggle-gpu-effects** | Toggles active GLSL shaders & dithering at runtime | GPL-3.0 | *Custom script* (`scripts/toggle-gpu-effects.lua`) |
