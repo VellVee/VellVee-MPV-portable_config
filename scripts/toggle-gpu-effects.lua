@@ -6,16 +6,16 @@ local mp  = require("mp")
 local msg = require("mp.msg")
 
 local effects_disabled = false
-local saved_shaders    = ""
+local saved_shaders    = {}
 local saved_dither     = ""
 
 local function toggle_effects()
     if not effects_disabled then
-        -- Save current state and disable
-        saved_shaders = mp.get_property("glsl-shaders", "")
+        -- Save current state using native API
+        saved_shaders = mp.get_property_native("glsl-shaders", {})
         saved_dither  = mp.get_property("dither", "")
 
-        mp.set_property("glsl-shaders", "")
+        mp.set_property_native("glsl-shaders", {})
         mp.set_property("dither", "no")
 
         effects_disabled = true
@@ -23,7 +23,7 @@ local function toggle_effects()
         msg.info("disabled shaders and dithering")
     else
         -- Restore saved state
-        mp.set_property("glsl-shaders", saved_shaders)
+        mp.set_property_native("glsl-shaders", saved_shaders)
         mp.set_property("dither", saved_dither)
 
         effects_disabled = false
@@ -33,20 +33,18 @@ local function toggle_effects()
 end
 
 -- When a new file loads, auto-profiles re-apply and reset glsl-shaders/dither.
--- Re-sync script state so toggle stays consistent.
+-- Capture the freshly applied profile values then disable again to stay consistent.
 mp.register_event("file-loaded", function()
     if effects_disabled then
-        -- Profiles just re-enabled shaders; save the fresh values then disable again
-        saved_shaders = mp.get_property("glsl-shaders", "")
+        saved_shaders = mp.get_property_native("glsl-shaders", {})
         saved_dither  = mp.get_property("dither", "")
-        mp.set_property("glsl-shaders", "")
+        mp.set_property_native("glsl-shaders", {})
         mp.set_property("dither", "no")
         msg.info("file-loaded: effects still disabled, re-applied off state")
-    else
-        -- Effects are on: update saved state to whatever the new profile loaded
-        saved_shaders = mp.get_property("glsl-shaders", "")
-        saved_dither  = mp.get_property("dither", "")
     end
+    -- Effects-on case: no action needed.
+    -- toggle_effects() always reads the current live state when disabling,
+    -- so saved_shaders is always captured fresh at the moment of the next toggle.
 end)
 
 -- No default key; bind via input.conf: g script-binding toggle-gpu-effects
